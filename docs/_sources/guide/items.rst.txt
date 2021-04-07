@@ -39,8 +39,11 @@ Let's create a `Surface` in `rooms/bathroom.py`
 
 A couple of things happened here.
 
-First, we created our Surface, `high_shelf`. Most types of item only need one parameter
-for creation, which is the **name** of the item. The name should be one word, and it
+First, we created our Surface, `high_shelf`. 
+
+All types of `IntFicPy object <ifp_objects.html>`_ require the current game as their
+first parameter. Most types of item one additional parameter for creation, which is
+the **name** of the item. The name should be one word, and it
 should be the final word of the name we use to describe it.
 
 So "car starter" gets "starter" for a name; "can of nails" gets "nails". If we also want
