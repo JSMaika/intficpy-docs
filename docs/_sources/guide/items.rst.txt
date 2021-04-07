@@ -42,7 +42,7 @@ A couple of things happened here.
 First, we created our Surface, `high_shelf`. 
 
 All types of `IntFicPy object <ifp_objects.html>`_ require the current game as their
-first parameter. Most types of item one additional parameter for creation, which is
+first parameter. Most types of item need one additional parameter for creation, which is
 the **name** of the item. The name should be one word, and it
 should be the final word of the name we use to describe it.
 
