@@ -2,7 +2,8 @@
 Introduction to IFPObjects
 ==========================
 
-The base class for all saveable objects in IntFicPy is `IFPObject`
+The base class for all saveable objects in IntFicPy is
+`IFPObject <../api/ifp_object.html#intficpy.ifp_object.IFPObject>`_
 
 The direct descendents of IFPObject (as of January 2020) are:
 
@@ -19,8 +20,9 @@ The direct descendents of IFPObject (as of January 2020) are:
 - Topic
 - TravelConnector
 
-The game (IFPGame instance) keeps track of every IFPObject associated with it by way of
-its "ifp_objects" attribute - a dictionary of IFPObjects each with a unique index.
+The game (`IFPGame <../api/ifp_game.html#intficpy.ifp_game.IFPGame>`_ instance) keeps
+track of every IFPObject associated with it by way of its "ifp_objects" attribute -
+a dictionary of IFPObjects each with a unique index.
 
 All IFPObjects need to be instantiated with a game object, so that they can be registered.
 

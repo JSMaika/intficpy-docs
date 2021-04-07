@@ -36,7 +36,8 @@
             
   <section id="introduction-to-ifpobjects">
 <h1>Introduction to IFPObjects<a class="headerlink" href="#introduction-to-ifpobjects" title="Permalink to this headline">¶</a></h1>
-<p>The base class for all saveable objects in IntFicPy is <cite>IFPObject</cite></p>
+<p>The base class for all saveable objects in IntFicPy is
+<a class="reference external" href="../api/ifp_object.html#intficpy.ifp_object.IFPObject">IFPObject</a></p>
 <p>The direct descendents of IFPObject (as of January 2020) are:</p>
 <ul class="simple">
 <li><p>AbstractScore (the score tracker for a game)</p></li>
@@ -52,8 +53,9 @@
 <li><p>Topic</p></li>
 <li><p>TravelConnector</p></li>
 </ul>
-<p>The game (IFPGame instance) keeps track of every IFPObject associated with it by way of
-its “ifp_objects” attribute - a dictionary of IFPObjects each with a unique index.</p>
+<p>The game (<a class="reference external" href="../api/ifp_game.html#intficpy.ifp_game.IFPGame">IFPGame</a> instance) keeps
+track of every IFPObject associated with it by way of its “ifp_objects” attribute -
+a dictionary of IFPObjects each with a unique index.</p>
 <p>All IFPObjects need to be instantiated with a game object, so that they can be registered.</p>
 <p>The “ifp_objects” dictionary is used to gather and organize the objects for serializing/saving.</p>
 <p>Multiple IFPObjects can be stored under the same index, but the save/load system will treat
