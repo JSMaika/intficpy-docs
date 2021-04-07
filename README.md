@@ -1,6 +1,8 @@
 # IntFicPy Docs
+View the docs at jsmaika.github.com/intficpy-docs
+
 This is the source for the documentation for the
-(IntFicPy)[https://github.com/JSMaika/intficpy] project.
+[IntFicPy](https://github.com/JSMaika/intficpy) project.
 
 Initial setup:
 
