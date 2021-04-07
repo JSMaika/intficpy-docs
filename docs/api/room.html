@@ -40,70 +40,197 @@
 <dt id="intficpy.room.OutdoorRoom">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">intficpy.room.</span></code><code class="sig-name descname"><span class="pre">OutdoorRoom</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.room.OutdoorRoom" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#intficpy.room.Room" title="intficpy.room.Room"><code class="xref py py-class docutils literal notranslate"><span class="pre">intficpy.room.Room</span></code></a></p>
-<p>Room is the class for outdoor locations in an .game
-OutdoorRooms have no walls, and the floor is called ground</p>
+<p>An OutdoorRoom is a Room with no walls, with ground instead of a floor, and with
+sky instead of a ceiling.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>game</strong> (<a class="reference internal" href="ifp_object.html#intficpy.ifp_object.IFPObject" title="intficpy.ifp_object.IFPObject"><em>IFPObject</em></a>) – the current game</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – the title of the room, to print when the player enters or looks
+around. Spaces are allowed. This name will <em>not</em> become a part of the
+parser’s vocabulary.</p></li>
+<li><p><strong>desc</strong> – the base Room description, to be printed when the player enters this
+Room, or looks around. The descriptions of any Things the Room contains will
+be appeneded to this base.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py class">
 <dt id="intficpy.room.Room">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">intficpy.room.</span></code><code class="sig-name descname"><span class="pre">Room</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.room.Room" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="physical_entity.html#intficpy.physical_entity.PhysicalEntity" title="intficpy.physical_entity.PhysicalEntity"><code class="xref py py-class docutils literal notranslate"><span class="pre">intficpy.physical_entity.PhysicalEntity</span></code></a></p>
-<p>Room is the overarching class for all locations in an .game</p>
+<p>A Room is a top-level location in the game.</p>
+<p>By default, a Room is assumed to be an indoor location with four walls,
+(north, south, east, and west), a floor, and a ceiling.</p>
+<p>Rooms can be connected directly to other Rooms by setting the direction
+attributes (north, northeast, etc.) of the Room.</p>
+<p>If a Room’s <cite>dark</cite> attribute is set to True, the player will not be able
+to see while in the Room, unless a LightSource is present.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>game</strong> (<a class="reference internal" href="ifp_object.html#intficpy.ifp_object.IFPObject" title="intficpy.ifp_object.IFPObject"><em>IFPObject</em></a>) – the current game</p></li>
+<li><p><strong>name</strong> (<em>str</em>) – the title of the room, to print when the player enters or looks
+around. Spaces are allowed. This name will <em>not</em> become a part of the
+parser’s vocabulary.</p></li>
+<li><p><strong>desc</strong> – the base Room description, to be printed when the player enters this
+Room, or looks around. The descriptions of any Things the Room contains will
+be appeneded to this base.</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="py method">
 <dt id="intficpy.room.Room.arriveFunc">
 <code class="sig-name descname"><span class="pre">arriveFunc</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.room.Room.arriveFunc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Operations to perform each time the player arrives in the room, before the description is printed. Empty by default. Override for custom events.</p>
+<dd><p>Override this to trigger custom behaviour when the player enters this room
+or looks around, <em>before</em> the room description is printed.</p>
+<p>This will <em>not</em> trigger unless a LightSource is present if the Room is set
+to <cite>dark=True</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>game</strong> (<a class="reference internal" href="ifp_game.html#intficpy.ifp_game.IFPGame" title="intficpy.ifp_game.IFPGame"><em>IFPGame</em></a>) – the current game</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="intficpy.room.Room.contentsByClass">
 <code class="sig-name descname"><span class="pre">contentsByClass</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">class_ref</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.room.Room.contentsByClass" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get all top level contents of a given class</p>
+<dd><p>Get every Thing in the top level contents of this Room (i.e., not inside
+another Thing) that is an instance of a given Thing subclass. (For instance,
+get all top level Surfaces.)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>game</strong> (<a class="reference internal" href="ifp_game.html#intficpy.ifp_game.IFPGame" title="intficpy.ifp_game.IFPGame"><em>IFPGame</em></a>) – the current game</p></li>
+<li><p><strong>class_ref</strong> (<em>type</em>) – the class to filter items on</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="intficpy.room.Room.descFunc">
 <code class="sig-name descname"><span class="pre">descFunc</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.room.Room.descFunc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Operations to perform immediately after printing the room description. Empty by default. Override for custom events.</p>
+<dd><p>Override this to trigger custom behaviour when the player enters this room
+or looks around, <em>after</em> the room description is printed.</p>
+<p>This will <em>not</em> trigger unless a LightSource is present if the Room is set
+to <cite>dark=True</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>game</strong> (<a class="reference internal" href="ifp_game.html#intficpy.ifp_game.IFPGame" title="intficpy.ifp_game.IFPGame"><em>IFPGame</em></a>) – the current game</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="intficpy.room.Room.describe">
 <code class="sig-name descname"><span class="pre">describe</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.room.Room.describe" title="Permalink to this definition">¶</a></dt>
-<dd><p>Prints the Room title and description and lists items in the Room</p>
+<dd><p>Generates and prints the Room description shown when the player enters this
+Room, or looks around.</p>
+<p>If it is too dark to see, only describe the darkness.
+Otherwise, print the Room description, and the descriptions of the Things that
+that are currently here.</p>
+<p>Returns False if it is too dark to see, and True otherwise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>game</strong> (<a class="reference internal" href="ifp_game.html#intficpy.ifp_game.IFPGame" title="intficpy.ifp_game.IFPGame"><em>IFPGame</em></a>) – the current game</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="intficpy.room.Room.describeDark">
 <code class="sig-name descname"><span class="pre">describeDark</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.room.Room.describeDark" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>If this Room is currently dark, describe the darkness. If the Room
+is lit by a LightSource, describe how the LightSource lights the
+Room.</p>
+<p>Return True if the player will be unable to see anything but darkness,
+and False otherwise.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>game</strong> (<a class="reference internal" href="ifp_game.html#intficpy.ifp_game.IFPGame" title="intficpy.ifp_game.IFPGame"><em>IFPGame</em></a>) – the current game</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt id="intficpy.room.Room.getLocContents">
 <code class="sig-name descname"><span class="pre">getLocContents</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.room.Room.getLocContents" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Create a sentence listing the other items in the player’s immediate location,
+aside from the player.</p>
+<p>This is used in describing the Room when the player is inside/on top of/underneath
+or otherwise nested in a Thing inside this Room.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>game</strong> (<a class="reference internal" href="ifp_game.html#intficpy.ifp_game.IFPGame" title="intficpy.ifp_game.IFPGame"><em>IFPGame</em></a>) – the current game</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str, None</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt id="intficpy.room.Room.onDiscover">
 <code class="sig-name descname"><span class="pre">onDiscover</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.room.Room.onDiscover" title="Permalink to this definition">¶</a></dt>
-<dd><p>Operations to perform the first time the room is described. Empty by default. Override for custom events.</p>
+<dd><p>Override this to trigger custom behaviour when the player “discovers” this
+Room.</p>
+<p>Discovery is not triggered until the player receives the description of this
+Room with full light, i.e. by entering/looking while <em>either</em> this Room’s
+<cite>dark</cite> attribute is set to False (default), <em>or</em> a lit LightSource is present.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>game</strong> (<a class="reference internal" href="ifp_game.html#intficpy.ifp_game.IFPGame" title="intficpy.ifp_game.IFPGame"><em>IFPGame</em></a>) – the current game</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="intficpy.room.Room.resolveDarkness">
 <code class="sig-name descname"><span class="pre">resolveDarkness</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.room.Room.resolveDarkness" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Determine if the player can see, based on this Room’s <cite>dark</cite> attribute, and
+whether there is a lit LightSource present</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>game</strong> (<a class="reference internal" href="ifp_game.html#intficpy.ifp_game.IFPGame" title="intficpy.ifp_game.IFPGame"><em>IFPGame</em></a>) – the current game</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt id="intficpy.room.Room.updateDiscovered">
 <code class="sig-name descname"><span class="pre">updateDiscovered</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.room.Room.updateDiscovered" title="Permalink to this definition">¶</a></dt>
-<dd><p>Call onDiscovery if not discovered yet. Set discovered to true.</p>
+<dd><p>Check if the player has discovered this Room before. If not, carry out any
+behaviour that the creator has specified should occur on this Room’s discovery,
+and mark this Room as discovered.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>game</strong> (<a class="reference internal" href="ifp_game.html#intficpy.ifp_game.IFPGame" title="intficpy.ifp_game.IFPGame"><em>IFPGame</em></a>) – the current game</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="intficpy.room.Room.contentsList">
 <em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">contentsList</span></code><a class="headerlink" href="#intficpy.room.Room.contentsList" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the room contents as a flattened list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
@@ -112,31 +239,73 @@ OutdoorRooms have no walls, and the floor is called ground</p>
 <dt id="intficpy.room.RoomGroup">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">intficpy.room.</span></code><code class="sig-name descname"><span class="pre">RoomGroup</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.room.RoomGroup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="ifp_object.html#intficpy.ifp_object.IFPObject" title="intficpy.ifp_object.IFPObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">intficpy.ifp_object.IFPObject</span></code></a></p>
-<p>Group similar Rooms and OutdoorRooms to modify shared features</p>
+<p>RoomGroup provides convenience features for modifying aspects of several Rooms
+at once. In particular, it allows creators to quickly set &amp; update the ceilings and
+or floors of all Rooms in the group at once.</p>
+<p>This can be useful for making larger scale changes during play. For instance,
+RoomGroup allows the creator to update the skies of a group of OutdoorRooms all
+at once, identically, to reflect weather.</p>
+<p>Member Rooms can be added individually with <cite>addMember</cite>, or in a bulk with <cite>setMembers</cite>.
+The members can be updated all at once with <cite>updateMembers</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>game</strong> (<a class="reference internal" href="ifp_object.html#intficpy.ifp_object.IFPObject" title="intficpy.ifp_object.IFPObject"><em>IFPObject</em></a>) – the current game</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt id="intficpy.room.RoomGroup.addMember">
 <code class="sig-name descname"><span class="pre">addMember</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">member</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.room.RoomGroup.addMember" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Add a single Room to this RoomGroup</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>member</strong> (<a class="reference internal" href="#intficpy.room.Room" title="intficpy.room.Room"><em>Room</em></a>) – the Room or OutdoorRoom to add to this RoomGroup</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt id="intficpy.room.RoomGroup.setGroupCeiling">
 <code class="sig-name descname"><span class="pre">setGroupCeiling</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ceiling</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.room.RoomGroup.setGroupCeiling" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Change the ceiling/sky for all member Rooms to match the ceiling (Thing) provided.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ceiling</strong> (<a class="reference internal" href="thing_base.html#intficpy.thing_base.Thing" title="intficpy.thing_base.Thing"><em>Thing</em></a>) – a Thing instance with attributes set to the desired values. The
+ceilings/skies of all Rooms and OutdoorRooms in this RoomGroup will have their
+attributes set to match those of the Thing provided.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt id="intficpy.room.RoomGroup.setGroupFloor">
 <code class="sig-name descname"><span class="pre">setGroupFloor</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">floor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.room.RoomGroup.setGroupFloor" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Change the floor/ground for all member Rooms to match the floor (Thing) provided.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>floor</strong> (<a class="reference internal" href="thing_base.html#intficpy.thing_base.Thing" title="intficpy.thing_base.Thing"><em>Thing</em></a>) – a Thing instance with attributes set to the desired values. The
+floors/ground of all Rooms and OutdoorRooms in this RoomGroup will have their
+attributes set to match those of the Thing provided.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt id="intficpy.room.RoomGroup.setMembers">
 <code class="sig-name descname"><span class="pre">setMembers</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">members_arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.room.RoomGroup.setMembers" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Add a list of Rooms to this RoomGroup</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>members_arr</strong> (<em>list of Room objects</em>) – the list of Rooms to add to this RoomGroup</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt id="intficpy.room.RoomGroup.updateMembers">
 <code class="sig-name descname"><span class="pre">updateMembers</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.room.RoomGroup.updateMembers" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Refresh the member Rooms to match the current ceiling, floor, etc. for this
+RoomGroup</p>
+</dd></dl>
 
 </dd></dl>
 
