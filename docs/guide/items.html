@@ -18,29 +18,36 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Introduction to Characters" href="characters.html" />
     <link rel="prev" title="Introduction to Rooms" href="rooms.html" />
-
+   
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-
-
+  
+  
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head><body>
-
+  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-
+          
 
           <div class="body" role="main">
-
+            
   <section id="introduction-to-items">
 <h1>Introduction to Items<a class="headerlink" href="#introduction-to-items" title="Permalink to this headline">¶</a></h1>
 <section id="creating-an-item">
 <h2>Creating an item<a class="headerlink" href="#creating-an-item" title="Permalink to this headline">¶</a></h2>
-<p>IFP has many types of item, like, Surface, Container, UnderSpace, LightSource, Lock,
-and Key. Even Actor, the class for <a class="reference external" href="characters.html">characters</a> is a type of item.
-All types of item (with the exception of <cite>Actor</cite>, which is in <cite>intficpy.actor</cite>) can
+<p>The base class for all items in IntFicPy is
+<a class="reference external" href="../api/things.html#intficpy.thing_base.Thing">Thing</a>.</p>
+<p>IFP has many types of item, like, <a class="reference external" href="../api/things.html#intficpy.things.Surface">Surface</a>,
+<a class="reference external" href="../api/things.html#intficpy.things.Container">Container</a>,
+<a class="reference external" href="../api/things.html#intficpy.things.UnderSpace">UnderSpace</a>,
+<a class="reference external" href="../api/things.html#intficpy.things.LightSource">LightSource</a>,
+<a class="reference external" href="../api/things.html#intficpy.things.Lock">Lock</a>,
+and <a class="reference external" href="../api/things.html#intficpy.things.Key">Key</a>.
+Even Actor, the class for <a class="reference external" href="characters.html">characters</a> is a type of Thing.</p>
+<p>All types of item (with the exception of <cite>Actor</cite>, which is in <cite>intficpy.actor</cite>) can
 be imported from <cite>intficpy.things</cite>.</p>
 <p>Let’s create a <cite>Surface</cite> in <cite>rooms/bathroom.py</cite></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">intficpy.room</span> <span class="kn">import</span> <span class="n">Room</span>
@@ -100,7 +107,7 @@ make sure that you set them as acceptable adjectives for the item (with <cite>it
 
 
           </div>
-
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -161,18 +168,18 @@ make sure that you set them as acceptable adjectives for the item (with <cite>it
     </div>
     <div class="footer">
       &copy;2021, JSMaika.
-
+      
       |
       Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.3</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-
+      
       |
       <a href="../_sources/guide/items.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 
+    
 
-
-
+    
   </body>
 </html>

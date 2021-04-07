@@ -5,8 +5,17 @@ Introduction to Items
 Creating an item
 ================
 
-IFP has many types of item, like, Surface, Container, UnderSpace, LightSource, Lock,
-and Key. Even Actor, the class for `characters <characters.html>`_ is a type of item.
+The base class for all items in IntFicPy is
+`Thing <../api/things.html#intficpy.thing_base.Thing>`_.
+
+IFP has many types of item, like, `Surface <../api/things.html#intficpy.things.Surface>`_,
+`Container <../api/things.html#intficpy.things.Container>`_,
+`UnderSpace <../api/things.html#intficpy.things.UnderSpace>`_,
+`LightSource <../api/things.html#intficpy.things.LightSource>`_,
+`Lock <../api/things.html#intficpy.things.Lock>`_,
+and `Key <../api/things.html#intficpy.things.Key>`_.
+Even Actor, the class for `characters <characters.html>`_ is a type of Thing.
+
 All types of item (with the exception of `Actor`, which is in `intficpy.actor`) can
 be imported from `intficpy.things`.
 

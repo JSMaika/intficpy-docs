@@ -15,6 +15,5 @@ pipenv install
 To generate the html docs:
 
 ```
-cd src
-make html
+./make-docs.sh
 ```
