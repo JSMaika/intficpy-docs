@@ -1,5 +1,5 @@
 # IntFicPy Docs
-[View the docs](https://jsmaika.github.com/intficpy-docs)
+[View the docs](https://jsmaika.github.io/intficpy-docs/)
 
 This is the source for the documentation for the
 [IntFicPy](https://github.com/JSMaika/intficpy) project.
