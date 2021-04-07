@@ -5,7 +5,7 @@ Introduction to Rooms
 Creating a room
 ===============
 
-Rooms in IntFicPy are objects inheriting from the `Room` class.
+Rooms in IntFicPy are objects inheriting from the `Room <../api/room.html#intficpy.room.Room>`_ class.
 
 Every IntFicPy game needs at least one room, where the Player object is placed at the
 start of the game.

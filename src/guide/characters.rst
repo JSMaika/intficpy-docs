@@ -5,7 +5,7 @@ Introduction to Characters
 Creating a character
 ======================
 
-A character in IFP is an item of class `Actor`.
+A character in IFP is an item of `class Actor <../api/actor.html#intficpy.actor.Actor>`_.
 
 Everything we talked about when we were `learning about items <items.html>`_ applies here.
 
