@@ -40,8 +40,26 @@
 <dt id="intficpy.actor.Actor">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">intficpy.actor.</span></code><code class="sig-name descname"><span class="pre">Actor</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.actor.Actor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="thing_base.html#intficpy.thing_base.Thing" title="intficpy.thing_base.Thing"><code class="xref py py-class docutils literal notranslate"><span class="pre">intficpy.thing_base.Thing</span></code></a></p>
-<p>Actor class, used for characters in the game.</p>
 <p>Actors are Things that are capable of conversations.</p>
+<p>Topics can be added using the <cite>addTopic</cite> method. SpecialTopics are added using the
+<cite>addSpecialTopic</cite> method.</p>
+<p>Actors track their available topics in dictionaries, depending on topic type.
+Each Actor has a dicitonary for <cite>ask_topics</cite>, <cite>tell_topics</cite>, <cite>give_topics</cite>, and
+<cite>show_topics</cite>, to which Topic objects can be added, as well as a <cite>special_topics</cite>
+dictionary for SpecialTopics.</p>
+<p>All topics that are currently in these dictionaries are considered to be active, and
+will be available in converstions.</p>
+<p>Actors can also buy and sell items. This can be enabled by adding an item using the
+<cite>addSelling</cite> or <cite>addWillBuy</cite> methods.</p>
+<p>Items the Actor is willing to sell or buy are stored in the <cite>for_sale</cite> and <cite>will_buy</cite>
+dictionaries on the Actor object. More specifically, objects of the SaleItem class
+are stored here, serving as records of what is for sale/what is wanted, and templates
+for the transactions.</p>
+<p>If you need to access a SaleItem created by <cite>addSelling</cite>/<cite>addWillBuy</cite>, you can look
+it up in the Actor’s <cite>for_sale</cite> or <cite>will_buy</cite> dictionary. The key is the IFPObject
+index of the relevant Thing, which can be found in the Thing’s <cite>ix</cite> attribute.
+For example, if an Actor <cite>person</cite> sells a Thing called <cite>item</cite>, we can look up the
+SaleItem with <cite>person.for_sale[item.ix]</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -355,9 +373,12 @@ By default, the Player is not described in the room description.</p>
 <dt id="intficpy.actor.SaleItem">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">intficpy.actor.</span></code><code class="sig-name descname"><span class="pre">SaleItem</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">currency</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">price</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.actor.SaleItem" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="ifp_object.html#intficpy.ifp_object.IFPObject" title="intficpy.ifp_object.IFPObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">intficpy.ifp_object.IFPObject</span></code></a></p>
-<p>Stores information about an Actor’s ability to sell a particular item to the player.
-SaleItems are created automatically by the Actor method <cite>addSelling</cite>, and game creators
-should not generally need to create them manually.</p>
+<p>Stores information about an Actor’s ability to sell a particular item to the player,
+or buy a particular item from the player.
+SaleItems are created automatically by the Actor methods <cite>addSelling</cite> and <cite>addWillBuy</cite>,
+and game creators should not generally need to create them manually.</p>
+<p>Once created, SaleItems can be accessed in the Actor’s <cite>for_sale</cite> and <cite>will_buy</cite>
+dictionaries by looking up the <cite>ix</cite> of the Thing in question.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -469,8 +490,9 @@ currency, and prints the interaction messages to the turn.</p>
 <dt id="intficpy.actor.SpecialTopic">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">intficpy.actor.</span></code><code class="sig-name descname"><span class="pre">SpecialTopic</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suggestion</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">topic_text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.actor.SpecialTopic" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#intficpy.actor.Topic" title="intficpy.actor.Topic"><code class="xref py py-class docutils literal notranslate"><span class="pre">intficpy.actor.Topic</span></code></a></p>
-<p>A Topic accessed by responding to a printed suggestion during
+<p>A SpecialTopic is is a Topic accessed by responding to a printed suggestion during
 conversation, instead of through the use of the ask/tell/give/show verbs.</p>
+<p>A SpecialTopic can be added to an Actor using <cite>Actor.addSpecialTopic</cite></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -499,7 +521,20 @@ Alternate phrasings will not be printed to the user.</p>
 <dt id="intficpy.actor.Topic">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">intficpy.actor.</span></code><code class="sig-name descname"><span class="pre">Topic</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">topic_text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.actor.Topic" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="ifp_object.html#intficpy.ifp_object.IFPObject" title="intficpy.ifp_object.IFPObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">intficpy.ifp_object.IFPObject</span></code></a></p>
-<p>An ask/tell/give/show topic.</p>
+<p>Topic represents a topic in conversation.</p>
+<p>Topic (base) is meant to be added to an Actor as an ask/tell/give/show topic -
+a conversation topic that is triggered when a player asks about, tells
+about, shows, or gives a Thing or Abstract.</p>
+<p>As well as printing text, a Topic can add and remove SpecialTopics from its Actor
+when it is triggered. Set SpecialTopics to <em>add</em> to the Actor by adding the
+SpecialTopic objects to the Topic’s <cite>new_suggestions</cite>. Add them to <cite>expire_suggestions</cite>
+to remove them.</p>
+<p>The Topic itself contains no reference to any Thing or Abstract to which a given
+Actor will associate it. This connection is created when the Topic is added to the
+Actor with addTopic, and then, exists only on the Actor object. This means that the
+same Topic can be added as a response to multiple things.</p>
+<p>A single Topic should <em>not</em> be added to multiple Actors at the same time, as this
+will break suggestion functionality.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
