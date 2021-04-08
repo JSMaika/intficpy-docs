@@ -124,8 +124,8 @@ of the item</p></li>
 <dl class="py method">
 <dt id="intficpy.actor.Actor.defaultTopic">
 <code class="sig-name descname"><span class="pre">defaultTopic</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.actor.Actor.defaultTopic" title="Permalink to this definition">¶</a></dt>
-<dd><p>Called when the Actor’s default topic is triggered. Prints the <cite>default_topic</cite>
-text, and the current SpecialTopic suggestions.</p>
+<dd><p>The default function for an Actor’s default topic. Can be overwritten by the
+game creator for an instance to create special responses</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>game</strong> (<a class="reference internal" href="ifp_game.html#intficpy.ifp_game.IFPGame" title="intficpy.ifp_game.IFPGame"><em>IFPGame</em></a>) – the current game</p>
@@ -168,8 +168,8 @@ character “learn” the initially unknown name of another character.</p>
 <dl class="py method">
 <dt id="intficpy.actor.Actor.printSuggestions">
 <code class="sig-name descname"><span class="pre">printSuggestions</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.actor.Actor.printSuggestions" title="Permalink to this definition">¶</a></dt>
-<dd><p>Print the suggestions for this all of this Actor’s current SpecialTopics in the
-format, “(You could {suggestion)”.</p>
+<dd><p>Print out (to the current turn event) all SpecialTopics currently available on
+this Actor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>game</strong> (<a class="reference internal" href="ifp_game.html#intficpy.ifp_game.IFPGame" title="intficpy.ifp_game.IFPGame"><em>IFPGame</em></a>) – the current game</p>
@@ -252,8 +252,7 @@ directly to the topic at hand.</p></li>
 <dl class="py method">
 <dt id="intficpy.actor.Actor.contains_desc">
 <em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">contains_desc</span></code><a class="headerlink" href="#intficpy.actor.Actor.contains_desc" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return an empty string. We do not want to describe an actor’s inventory on
-room/examine desc.</p>
+<dd><p>Do not describe an actor’s inventory on room/examine desc</p>
 </dd></dl>
 
 <dl class="py method">
