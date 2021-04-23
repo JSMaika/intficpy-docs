@@ -64,7 +64,7 @@ one automatically, we should set
 
     high_shelf = Surface(game, "shelf")
 
-    high_shelf._verbose_name = "high shelf"
+    high_shelf.full_name = "high shelf"
 
 Finally, we placed the item in the bathroom with `high_shelf.moveTo(bathroom)`
 

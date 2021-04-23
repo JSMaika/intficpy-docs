@@ -65,7 +65,7 @@ SaleItem with <cite>person.for_sale[item.ix]</cite>.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>game</strong> (<a class="reference internal" href="ifp_game.html#intficpy.ifp_game.IFPGame" title="intficpy.ifp_game.IFPGame"><em>IFPGame</em></a>) – the current game</p></li>
 <li><p><strong>name</strong> (<em>str</em>) – a single noun to use as the Actor’s initial name (synonyms/adjectives/
-_verbose_name can be customized after initialization)</p></li>
+full_name can be customized after initialization)</p></li>
 </ul>
 </dd>
 </dl>
@@ -161,7 +161,7 @@ text, and the current SpecialTopic suggestions.</p>
 <dt id="intficpy.actor.Actor.makeProper">
 <code class="sig-name descname"><span class="pre">makeProper</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">proper_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.actor.Actor.makeProper" title="Permalink to this definition">¶</a></dt>
 <dd><p>Give this character a proper name. Updates <cite>has_proper_name</cite> as well as
-<cite>name</cite>, <cite>_verbose_name</cite>, synonyms, and adjectives for this Actor based on
+<cite>name</cite>, <cite>full_name</cite>, synonyms, and adjectives for this Actor based on
 the new name given. The intended use is to facilitate having the player
 character “learn” the initially unknown name of another character.</p>
 <dl class="field-list simple">
