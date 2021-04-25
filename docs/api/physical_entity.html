@@ -41,11 +41,6 @@
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">intficpy.physical_entity.</span></code><code class="sig-name descname"><span class="pre">PhysicalEntity</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.physical_entity.PhysicalEntity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="ifp_object.html#intficpy.ifp_object.IFPObject" title="intficpy.ifp_object.IFPObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">intficpy.ifp_object.IFPObject</span></code></a></p>
 <dl class="py method">
-<dt id="intficpy.physical_entity.PhysicalEntity.addSubLevelContains">
-<code class="sig-name descname"><span class="pre">addSubLevelContains</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.physical_entity.PhysicalEntity.addSubLevelContains" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt id="intficpy.physical_entity.PhysicalEntity.addThing">
 <code class="sig-name descname"><span class="pre">addThing</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.physical_entity.PhysicalEntity.addThing" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -59,6 +54,12 @@
 <dt id="intficpy.physical_entity.PhysicalEntity.containsItem">
 <code class="sig-name descname"><span class="pre">containsItem</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.physical_entity.PhysicalEntity.containsItem" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns True if item is in the contains or sub_contains dictionary</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="intficpy.physical_entity.PhysicalEntity.getNested">
+<code class="sig-name descname"><span class="pre">getNested</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.physical_entity.PhysicalEntity.getNested" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find revealed nested Things</p>
 </dd></dl>
 
 <dl class="py method">
@@ -109,6 +110,11 @@
 </dd></dl>
 
 <dl class="py method">
+<dt id="intficpy.physical_entity.PhysicalEntity.sub_contains">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">sub_contains</span></code><a class="headerlink" href="#intficpy.physical_entity.PhysicalEntity.sub_contains" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
 <dt id="intficpy.physical_entity.PhysicalEntity.topLevelContentsList">
 <em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">topLevelContentsList</span></code><a class="headerlink" href="#intficpy.physical_entity.PhysicalEntity.topLevelContentsList" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the top level contents as a flattened list</p>
@@ -118,6 +124,11 @@
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="py method">
+<dt id="intficpy.physical_entity.PhysicalEntity.visible_nested_contents">
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">visible_nested_contents</span></code><a class="headerlink" href="#intficpy.physical_entity.PhysicalEntity.visible_nested_contents" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 

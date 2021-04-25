@@ -40,16 +40,48 @@
 <dt id="intficpy.travel.DoorConnector">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">intficpy.travel.</span></code><code class="sig-name descname"><span class="pre">DoorConnector</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">room1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">room2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.travel.DoorConnector" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#intficpy.travel.TravelConnector" title="intficpy.travel.TravelConnector"><code class="xref py py-class docutils literal notranslate"><span class="pre">intficpy.travel.TravelConnector</span></code></a></p>
-<p>Base class for travel connectors
-Links two rooms together</p>
+<p>A TravelConnector with a door that opens and closes.</p>
+<p>A lock can be added to the door using setLock</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>game</strong> (<a class="reference internal" href="ifp_game.html#intficpy.ifp_game.IFPGame" title="intficpy.ifp_game.IFPGame"><em>IFPGame</em></a>) – the current game</p></li>
+<li><p><strong>room1</strong> (<a class="reference internal" href="room.html#intficpy.room.Room" title="intficpy.room.Room"><em>Room</em></a>) – the first Room to connect</p></li>
+<li><p><strong>direction1</strong> (<em>valid direction string</em><em> (</em><em>n/north/se/southeast</em><em>, </em><em>etc.</em><em>)</em>) – the direction from <cite>room1</cite> this connector attatches to (ex, pass
+in “n” to set room1.north to this connector)</p></li>
+<li><p><strong>room2</strong> (<a class="reference internal" href="room.html#intficpy.room.Room" title="intficpy.room.Room"><em>Room</em></a>) – the other Room to connect</p></li>
+<li><p><strong>direction1</strong> – the direction from <cite>room2</cite> this connector attatches to (ex, pass
+in “s” to set room2.south to this connector)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="intficpy.travel.DoorConnector.EntranceAType">
+<code class="sig-name descname"><span class="pre">EntranceAType</span></code><a class="headerlink" href="#intficpy.travel.DoorConnector.EntranceAType" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="things.html#intficpy.things.Door" title="intficpy.things.Door"><code class="xref py py-class docutils literal notranslate"><span class="pre">intficpy.things.Door</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.travel.DoorConnector.EntranceBType">
+<code class="sig-name descname"><span class="pre">EntranceBType</span></code><a class="headerlink" href="#intficpy.travel.DoorConnector.EntranceBType" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="things.html#intficpy.things.Door" title="intficpy.things.Door"><code class="xref py py-class docutils literal notranslate"><span class="pre">intficpy.things.Door</span></code></a></p>
+</dd></dl>
+
 <dl class="py method">
 <dt id="intficpy.travel.DoorConnector.setLock">
 <code class="sig-name descname"><span class="pre">setLock</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lock_obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.travel.DoorConnector.setLock" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Add a lock to this door.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>lock_obj</strong> – the Lock to place on this door. Must not already be attached to
+something.</p>
+</dd>
+</dl>
+</dd></dl>
 
-<dl class="py method">
-<dt id="intficpy.travel.DoorConnector.travel">
-<code class="sig-name descname"><span class="pre">travel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.travel.DoorConnector.travel" title="Permalink to this definition">¶</a></dt>
+<dl class="py attribute">
+<dt id="intficpy.travel.DoorConnector.entrance_name">
+<code class="sig-name descname"><span class="pre">entrance_name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'door'</span></em><a class="headerlink" href="#intficpy.travel.DoorConnector.entrance_name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -58,11 +90,39 @@ Links two rooms together</p>
 <dt id="intficpy.travel.LadderConnector">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">intficpy.travel.</span></code><code class="sig-name descname"><span class="pre">LadderConnector</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">room1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">room2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.travel.LadderConnector" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#intficpy.travel.TravelConnector" title="intficpy.travel.TravelConnector"><code class="xref py py-class docutils literal notranslate"><span class="pre">intficpy.travel.TravelConnector</span></code></a></p>
-<p>Class for ladder travel connectors (up/down)
-Links two rooms together</p>
-<dl class="py method">
-<dt id="intficpy.travel.LadderConnector.travel">
-<code class="sig-name descname"><span class="pre">travel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.travel.LadderConnector.travel" title="Permalink to this definition">¶</a></dt>
+<p>A ladder to connect two rooms, one above, and one below.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>game</strong> (<a class="reference internal" href="ifp_game.html#intficpy.ifp_game.IFPGame" title="intficpy.ifp_game.IFPGame"><em>IFPGame</em></a>) – the current game</p></li>
+<li><p><strong>room1</strong> (<a class="reference internal" href="room.html#intficpy.room.Room" title="intficpy.room.Room"><em>Room</em></a>) – the lower room</p></li>
+<li><p><strong>room2</strong> (<a class="reference internal" href="room.html#intficpy.room.Room" title="intficpy.room.Room"><em>Room</em></a>) – the upper room</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="intficpy.travel.LadderConnector.default_description">
+<code class="sig-name descname"><span class="pre">default_description</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'A</span> <span class="pre">{name}</span> <span class="pre">leads</span> <span class="pre">{full_direction}.</span> <span class="pre">'</span></em><a class="headerlink" href="#intficpy.travel.LadderConnector.default_description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.travel.LadderConnector.default_travel_msg">
+<code class="sig-name descname"><span class="pre">default_travel_msg</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'You</span> <span class="pre">climb</span> <span class="pre">{preposition}</span> <span class="pre">the</span> <span class="pre">{entrance.verbose_name}.</span> <span class="pre">'</span></em><a class="headerlink" href="#intficpy.travel.LadderConnector.default_travel_msg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.travel.LadderConnector.entrance_a_preposition">
+<code class="sig-name descname"><span class="pre">entrance_a_preposition</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'up'</span></em><a class="headerlink" href="#intficpy.travel.LadderConnector.entrance_a_preposition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.travel.LadderConnector.entrance_b_preposition">
+<code class="sig-name descname"><span class="pre">entrance_b_preposition</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'down'</span></em><a class="headerlink" href="#intficpy.travel.LadderConnector.entrance_b_preposition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.travel.LadderConnector.entrance_name">
+<code class="sig-name descname"><span class="pre">entrance_name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'ladder'</span></em><a class="headerlink" href="#intficpy.travel.LadderConnector.entrance_name" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -71,21 +131,81 @@ Links two rooms together</p>
 <dt id="intficpy.travel.StaircaseConnector">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">intficpy.travel.</span></code><code class="sig-name descname"><span class="pre">StaircaseConnector</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">room1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">room2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.travel.StaircaseConnector" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#intficpy.travel.TravelConnector" title="intficpy.travel.TravelConnector"><code class="xref py py-class docutils literal notranslate"><span class="pre">intficpy.travel.TravelConnector</span></code></a></p>
-<p>Class for staircase travel connectors (up/down)
-Links two rooms together</p>
-<dl class="py method">
-<dt id="intficpy.travel.StaircaseConnector.travel">
-<code class="sig-name descname"><span class="pre">travel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.travel.StaircaseConnector.travel" title="Permalink to this definition">¶</a></dt>
+<p>A staircase to connect two rooms, one above, and one below.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>game</strong> (<a class="reference internal" href="ifp_game.html#intficpy.ifp_game.IFPGame" title="intficpy.ifp_game.IFPGame"><em>IFPGame</em></a>) – the current game</p></li>
+<li><p><strong>room1</strong> (<a class="reference internal" href="room.html#intficpy.room.Room" title="intficpy.room.Room"><em>Room</em></a>) – the lower room</p></li>
+<li><p><strong>room2</strong> (<a class="reference internal" href="room.html#intficpy.room.Room" title="intficpy.room.Room"><em>Room</em></a>) – the upper room</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="intficpy.travel.StaircaseConnector.default_description">
+<code class="sig-name descname"><span class="pre">default_description</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'A</span> <span class="pre">{name}</span> <span class="pre">leads</span> <span class="pre">{full_direction}.</span> <span class="pre">'</span></em><a class="headerlink" href="#intficpy.travel.StaircaseConnector.default_description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.travel.StaircaseConnector.default_travel_msg">
+<code class="sig-name descname"><span class="pre">default_travel_msg</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'You</span> <span class="pre">climb</span> <span class="pre">{preposition}</span> <span class="pre">the</span> <span class="pre">{entrance.verbose_name}.</span> <span class="pre">'</span></em><a class="headerlink" href="#intficpy.travel.StaircaseConnector.default_travel_msg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.travel.StaircaseConnector.entrance_a_preposition">
+<code class="sig-name descname"><span class="pre">entrance_a_preposition</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'up'</span></em><a class="headerlink" href="#intficpy.travel.StaircaseConnector.entrance_a_preposition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.travel.StaircaseConnector.entrance_b_preposition">
+<code class="sig-name descname"><span class="pre">entrance_b_preposition</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'down'</span></em><a class="headerlink" href="#intficpy.travel.StaircaseConnector.entrance_b_preposition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.travel.StaircaseConnector.entrance_name">
+<code class="sig-name descname"><span class="pre">entrance_name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'staircase'</span></em><a class="headerlink" href="#intficpy.travel.StaircaseConnector.entrance_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.travel.StaircaseConnector.entrance_synonyms">
+<code class="sig-name descname"><span class="pre">entrance_synonyms</span></code><em class="property"> <span class="pre">=</span> <span class="pre">['stairway',</span> <span class="pre">'stairs',</span> <span class="pre">'stair']</span></em><a class="headerlink" href="#intficpy.travel.StaircaseConnector.entrance_synonyms" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt id="intficpy.travel.TravelConnector">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">intficpy.travel.</span></code><code class="sig-name descname"><span class="pre">TravelConnector</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">room1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">room2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'doorway'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.travel.TravelConnector" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">intficpy.travel.</span></code><code class="sig-name descname"><span class="pre">TravelConnector</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">room1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">room2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.travel.TravelConnector" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="ifp_object.html#intficpy.ifp_object.IFPObject" title="intficpy.ifp_object.IFPObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">intficpy.ifp_object.IFPObject</span></code></a></p>
-<p>Base class for travel connectors
-Links two rooms together</p>
+<p>Base class for travel connectors. Links two rooms together, with an interactable
+Thing on each end.</p>
+<p>By default, this creates a “doorway” on either end, without an opening and closing
+door.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>game</strong> (<a class="reference internal" href="ifp_game.html#intficpy.ifp_game.IFPGame" title="intficpy.ifp_game.IFPGame"><em>IFPGame</em></a>) – the current game</p></li>
+<li><p><strong>room1</strong> (<a class="reference internal" href="room.html#intficpy.room.Room" title="intficpy.room.Room"><em>Room</em></a>) – the first Room to connect</p></li>
+<li><p><strong>direction1</strong> (<em>valid direction string</em><em> (</em><em>n/north/se/southeast</em><em>, </em><em>etc.</em><em>)</em>) – the direction from <cite>room1</cite> this connector attatches to (ex, pass
+in “n” to set room1.north to this connector)</p></li>
+<li><p><strong>room2</strong> (<a class="reference internal" href="room.html#intficpy.room.Room" title="intficpy.room.Room"><em>Room</em></a>) – the other Room to connect</p></li>
+<li><p><strong>direction1</strong> – the direction from <cite>room2</cite> this connector attatches to (ex, pass
+in “s” to set room2.south to this connector)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="intficpy.travel.TravelConnector.EntranceAType">
+<code class="sig-name descname"><span class="pre">EntranceAType</span></code><a class="headerlink" href="#intficpy.travel.TravelConnector.EntranceAType" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="thing_base.html#intficpy.thing_base.Thing" title="intficpy.thing_base.Thing"><code class="xref py py-class docutils literal notranslate"><span class="pre">intficpy.thing_base.Thing</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.travel.TravelConnector.EntranceBType">
+<code class="sig-name descname"><span class="pre">EntranceBType</span></code><a class="headerlink" href="#intficpy.travel.TravelConnector.EntranceBType" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="thing_base.html#intficpy.thing_base.Thing" title="intficpy.thing_base.Thing"><code class="xref py py-class docutils literal notranslate"><span class="pre">intficpy.thing_base.Thing</span></code></a></p>
+</dd></dl>
+
 <dl class="py method">
 <dt id="intficpy.travel.TravelConnector.setFromPrototype">
 <code class="sig-name descname"><span class="pre">setFromPrototype</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connector</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.travel.TravelConnector.setFromPrototype" title="Permalink to this definition">¶</a></dt>
@@ -94,6 +214,63 @@ Links two rooms together</p>
 <dl class="py method">
 <dt id="intficpy.travel.TravelConnector.travel">
 <code class="sig-name descname"><span class="pre">travel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.travel.TravelConnector.travel" title="Permalink to this definition">¶</a></dt>
+<dd><p>The player travels through this connector.</p>
+<p>Determine if the player is able to pass, and if so, move the player.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>game</strong> (<a class="reference internal" href="ifp_game.html#intficpy.ifp_game.IFPGame" title="intficpy.ifp_game.IFPGame"><em>IFPGame</em></a>) – the current game</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.travel.TravelConnector.can_pass">
+<code class="sig-name descname"><span class="pre">can_pass</span></code><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#intficpy.travel.TravelConnector.can_pass" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.travel.TravelConnector.cannot_pass_msg">
+<code class="sig-name descname"><span class="pre">cannot_pass_msg</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'The</span> <span class="pre">way</span> <span class="pre">is</span> <span class="pre">blocked.</span> <span class="pre">'</span></em><a class="headerlink" href="#intficpy.travel.TravelConnector.cannot_pass_msg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.travel.TravelConnector.default_description">
+<code class="sig-name descname"><span class="pre">default_description</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'There</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">{name}</span> <span class="pre">to</span> <span class="pre">the</span> <span class="pre">{full_direction}.</span> <span class="pre">'</span></em><a class="headerlink" href="#intficpy.travel.TravelConnector.default_description" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.travel.TravelConnector.default_travel_msg">
+<code class="sig-name descname"><span class="pre">default_travel_msg</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'You</span> <span class="pre">go</span> <span class="pre">{preposition}</span> <span class="pre">the</span> <span class="pre">{entrance.verbose_name}.</span> <span class="pre">'</span></em><a class="headerlink" href="#intficpy.travel.TravelConnector.default_travel_msg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.travel.TravelConnector.entrance_a_msg">
+<code class="sig-name descname"><span class="pre">entrance_a_msg</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#intficpy.travel.TravelConnector.entrance_a_msg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.travel.TravelConnector.entrance_a_preposition">
+<code class="sig-name descname"><span class="pre">entrance_a_preposition</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'through'</span></em><a class="headerlink" href="#intficpy.travel.TravelConnector.entrance_a_preposition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.travel.TravelConnector.entrance_b_msg">
+<code class="sig-name descname"><span class="pre">entrance_b_msg</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#intficpy.travel.TravelConnector.entrance_b_msg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.travel.TravelConnector.entrance_b_preposition">
+<code class="sig-name descname"><span class="pre">entrance_b_preposition</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'through'</span></em><a class="headerlink" href="#intficpy.travel.TravelConnector.entrance_b_preposition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.travel.TravelConnector.entrance_name">
+<code class="sig-name descname"><span class="pre">entrance_name</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'doorway'</span></em><a class="headerlink" href="#intficpy.travel.TravelConnector.entrance_name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.travel.TravelConnector.entrance_synonyms">
+<code class="sig-name descname"><span class="pre">entrance_synonyms</span></code><em class="property"> <span class="pre">=</span> <span class="pre">[]</span></em><a class="headerlink" href="#intficpy.travel.TravelConnector.entrance_synonyms" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -101,19 +278,42 @@ Links two rooms together</p>
 <dl class="py function">
 <dt id="intficpy.travel.getDirectionFromString">
 <code class="sig-prename descclassname"><span class="pre">intficpy.travel.</span></code><code class="sig-name descname"><span class="pre">getDirectionFromString</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_string</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.travel.getDirectionFromString" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Given a direction string (n/nw/east, etc.), return the corresponding direction
+attribute of a given Room</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>loc</strong> (<a class="reference internal" href="room.html#intficpy.room.Room" title="intficpy.room.Room"><em>Room</em></a>) – the Room we’re in</p></li>
+<li><p><strong>input_string</strong> (<em>str</em>) – the string to interpret as direction input</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py function">
 <dt id="intficpy.travel.preRemovePlayer">
 <code class="sig-prename descclassname"><span class="pre">intficpy.travel.</span></code><code class="sig-name descname"><span class="pre">preRemovePlayer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.travel.preRemovePlayer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Remove the Player from the current room
-Called by travel functions</p>
+<dd><p>Remove the Player from all nested locations to prepare for travel</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="intficpy.travel.travelD">
 <code class="sig-prename descclassname"><span class="pre">intficpy.travel.</span></code><code class="sig-name descname"><span class="pre">travelD</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.travel.travelD" title="Permalink to this definition">¶</a></dt>
 <dd><p>Travel downward</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="intficpy.travel.travelDirection">
+<code class="sig-prename descclassname"><span class="pre">intficpy.travel.</span></code><code class="sig-name descname"><span class="pre">travelDirection</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.travel.travelDirection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Travel in the specified direction, from the player’s current location</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>game</strong> (<a class="reference internal" href="ifp_game.html#intficpy.ifp_game.IFPGame" title="intficpy.ifp_game.IFPGame"><em>IFPGame</em></a>) – the current game</p></li>
+<li><p><strong>direction</strong> (<em>str</em>) – the direction input</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">

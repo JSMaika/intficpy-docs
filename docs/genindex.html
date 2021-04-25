@@ -102,8 +102,6 @@
 </li>
       <li><a href="api/actor.html#intficpy.actor.Actor.addSpecialTopic">addSpecialTopic() (intficpy.actor.Actor method)</a>
 </li>
-      <li><a href="api/physical_entity.html#intficpy.physical_entity.PhysicalEntity.addSubLevelContains">addSubLevelContains() (intficpy.physical_entity.PhysicalEntity method)</a>
-</li>
       <li><a href="api/thing_base.html#intficpy.thing_base.Thing.addSynonym">addSynonym() (intficpy.thing_base.Thing method)</a>
 </li>
   </ul></td>
@@ -182,6 +180,10 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/parser.html#intficpy.parser.Parser.callVerb">callVerb() (intficpy.parser.Parser method)</a>
 </li>
+      <li><a href="api/travel.html#intficpy.travel.TravelConnector.can_pass">can_pass (intficpy.travel.TravelConnector attribute)</a>
+</li>
+      <li><a href="api/travel.html#intficpy.travel.TravelConnector.cannot_pass_msg">cannot_pass_msg (intficpy.travel.TravelConnector attribute)</a>
+</li>
       <li><a href="api/thing_base.html#intficpy.thing_base.Thing.capNameArticle">capNameArticle() (intficpy.thing_base.Thing method)</a>
 </li>
       <li><a href="api/parser.html#intficpy.parser.Parser.checkAdjectives">checkAdjectives() (intficpy.parser.Parser method)</a>
@@ -220,10 +222,10 @@
 </li>
       <li><a href="api/verb.html#intficpy.verb.ClimbOutVerb">ClimbOutVerb (class in intficpy.verb)</a>
 </li>
-      <li><a href="api/verb.html#intficpy.verb.ClimbUpVerb">ClimbUpVerb (class in intficpy.verb)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/verb.html#intficpy.verb.ClimbUpVerb">ClimbUpVerb (class in intficpy.verb)</a>
+</li>
       <li><a href="api/score.html#intficpy.score.HintSystem.closeNode">closeNode() (intficpy.score.HintSystem method)</a>
 </li>
       <li><a href="api/verb.html#intficpy.verb.CloseVerb">CloseVerb (class in intficpy.verb)</a>
@@ -288,6 +290,22 @@
         <li><a href="api/thing_base.html#intficpy.thing_base.Thing.default_desc">(intficpy.thing_base.Thing property)</a>
 </li>
         <li><a href="api/things.html#intficpy.things.Unremarkable.default_desc">(intficpy.things.Unremarkable property)</a>
+</li>
+      </ul></li>
+      <li><a href="api/travel.html#intficpy.travel.LadderConnector.default_description">default_description (intficpy.travel.LadderConnector attribute)</a>
+
+      <ul>
+        <li><a href="api/travel.html#intficpy.travel.StaircaseConnector.default_description">(intficpy.travel.StaircaseConnector attribute)</a>
+</li>
+        <li><a href="api/travel.html#intficpy.travel.TravelConnector.default_description">(intficpy.travel.TravelConnector attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/travel.html#intficpy.travel.LadderConnector.default_travel_msg">default_travel_msg (intficpy.travel.LadderConnector attribute)</a>
+
+      <ul>
+        <li><a href="api/travel.html#intficpy.travel.StaircaseConnector.default_travel_msg">(intficpy.travel.StaircaseConnector attribute)</a>
+</li>
+        <li><a href="api/travel.html#intficpy.travel.TravelConnector.default_travel_msg">(intficpy.travel.TravelConnector attribute)</a>
 </li>
       </ul></li>
       <li><a href="api/actor.html#intficpy.actor.Player.default_xdesc">default_xdesc() (intficpy.actor.Player property)</a>
@@ -520,8 +538,56 @@
 </li>
       <li><a href="api/verb.html#intficpy.verb.EnterVerb">EnterVerb (class in intficpy.verb)</a>
 </li>
+      <li><a href="api/travel.html#intficpy.travel.TravelConnector.entrance_a_msg">entrance_a_msg (intficpy.travel.TravelConnector attribute)</a>
+</li>
+      <li><a href="api/travel.html#intficpy.travel.LadderConnector.entrance_a_preposition">entrance_a_preposition (intficpy.travel.LadderConnector attribute)</a>
+
+      <ul>
+        <li><a href="api/travel.html#intficpy.travel.StaircaseConnector.entrance_a_preposition">(intficpy.travel.StaircaseConnector attribute)</a>
+</li>
+        <li><a href="api/travel.html#intficpy.travel.TravelConnector.entrance_a_preposition">(intficpy.travel.TravelConnector attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/travel.html#intficpy.travel.TravelConnector.entrance_b_msg">entrance_b_msg (intficpy.travel.TravelConnector attribute)</a>
+</li>
+      <li><a href="api/travel.html#intficpy.travel.LadderConnector.entrance_b_preposition">entrance_b_preposition (intficpy.travel.LadderConnector attribute)</a>
+
+      <ul>
+        <li><a href="api/travel.html#intficpy.travel.StaircaseConnector.entrance_b_preposition">(intficpy.travel.StaircaseConnector attribute)</a>
+</li>
+        <li><a href="api/travel.html#intficpy.travel.TravelConnector.entrance_b_preposition">(intficpy.travel.TravelConnector attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/travel.html#intficpy.travel.DoorConnector.entrance_name">entrance_name (intficpy.travel.DoorConnector attribute)</a>
+
+      <ul>
+        <li><a href="api/travel.html#intficpy.travel.LadderConnector.entrance_name">(intficpy.travel.LadderConnector attribute)</a>
+</li>
+        <li><a href="api/travel.html#intficpy.travel.StaircaseConnector.entrance_name">(intficpy.travel.StaircaseConnector attribute)</a>
+</li>
+        <li><a href="api/travel.html#intficpy.travel.TravelConnector.entrance_name">(intficpy.travel.TravelConnector attribute)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/travel.html#intficpy.travel.StaircaseConnector.entrance_synonyms">entrance_synonyms (intficpy.travel.StaircaseConnector attribute)</a>
+
+      <ul>
+        <li><a href="api/travel.html#intficpy.travel.TravelConnector.entrance_synonyms">(intficpy.travel.TravelConnector attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/travel.html#intficpy.travel.DoorConnector.EntranceAType">EntranceAType (intficpy.travel.DoorConnector attribute)</a>
+
+      <ul>
+        <li><a href="api/travel.html#intficpy.travel.TravelConnector.EntranceAType">(intficpy.travel.TravelConnector attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="api/travel.html#intficpy.travel.DoorConnector.EntranceBType">EntranceBType (intficpy.travel.DoorConnector attribute)</a>
+
+      <ul>
+        <li><a href="api/travel.html#intficpy.travel.TravelConnector.EntranceBType">(intficpy.travel.TravelConnector attribute)</a>
+</li>
+      </ul></li>
       <li><a href="api/verb.html#intficpy.verb.ExamineVerb">ExamineVerb (class in intficpy.verb)</a>
 </li>
       <li><a href="api/verb.html#intficpy.verb.ExitVerb">ExitVerb (class in intficpy.verb)</a>
@@ -614,7 +680,7 @@
 </li>
       <li><a href="api/room.html#intficpy.room.Room.getLocContents">getLocContents() (intficpy.room.Room method)</a>
 </li>
-      <li><a href="api/thing_base.html#intficpy.thing_base.Thing.getNested">getNested() (intficpy.thing_base.Thing method)</a>
+      <li><a href="api/physical_entity.html#intficpy.physical_entity.PhysicalEntity.getNested">getNested() (intficpy.physical_entity.PhysicalEntity method)</a>
 </li>
       <li><a href="api/parser.html#intficpy.parser.Parser.getObjectTargets">getObjectTargets() (intficpy.parser.Parser method)</a>
 </li>
@@ -1645,6 +1711,8 @@
 </li>
       <li><a href="api/thing_base.html#intficpy.thing_base.Thing.state_desc">state_desc() (intficpy.thing_base.Thing property)</a>
 </li>
+      <li><a href="api/physical_entity.html#intficpy.physical_entity.PhysicalEntity.sub_contains">sub_contains() (intficpy.physical_entity.PhysicalEntity property)</a>
+</li>
       <li><a href="api/physical_entity.html#intficpy.physical_entity.PhysicalEntity.subLevelContainsItem">subLevelContainsItem() (intficpy.physical_entity.PhysicalEntity method)</a>
 </li>
       <li><a href="api/physical_entity.html#intficpy.physical_entity.PhysicalEntity.subLevelContentsList">subLevelContentsList() (intficpy.physical_entity.PhysicalEntity property)</a>
@@ -1929,22 +1997,16 @@
 </li>
       <li><a href="api/things.html#intficpy.things.Transparent">Transparent (class in intficpy.things)</a>
 </li>
-      <li><a href="api/travel.html#intficpy.travel.DoorConnector.travel">travel() (intficpy.travel.DoorConnector method)</a>
-
-      <ul>
-        <li><a href="api/travel.html#intficpy.travel.LadderConnector.travel">(intficpy.travel.LadderConnector method)</a>
+      <li><a href="api/travel.html#intficpy.travel.TravelConnector.travel">travel() (intficpy.travel.TravelConnector method)</a>
 </li>
-        <li><a href="api/travel.html#intficpy.travel.StaircaseConnector.travel">(intficpy.travel.StaircaseConnector method)</a>
-</li>
-        <li><a href="api/travel.html#intficpy.travel.TravelConnector.travel">(intficpy.travel.TravelConnector method)</a>
-</li>
-      </ul></li>
       <li><a href="api/travel.html#intficpy.travel.TravelConnector">TravelConnector (class in intficpy.travel)</a>
+</li>
+      <li><a href="api/travel.html#intficpy.travel.travelD">travelD() (in module intficpy.travel)</a>
+</li>
+      <li><a href="api/travel.html#intficpy.travel.travelDirection">travelDirection() (in module intficpy.travel)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/travel.html#intficpy.travel.travelD">travelD() (in module intficpy.travel)</a>
-</li>
       <li><a href="api/travel.html#intficpy.travel.travelE">travelE() (in module intficpy.travel)</a>
 </li>
       <li><a href="api/travel.html#intficpy.travel.travelIn">travelIn() (in module intficpy.travel)</a>
@@ -2202,6 +2264,8 @@
       <li><a href="api/parser.html#intficpy.parser.Parser.verboseNamesMatch">verboseNamesMatch() (intficpy.parser.Parser method)</a>
 </li>
       <li><a href="api/verb.html#intficpy.verb.VerbsVerb">VerbsVerb (class in intficpy.verb)</a>
+</li>
+      <li><a href="api/physical_entity.html#intficpy.physical_entity.PhysicalEntity.visible_nested_contents">visible_nested_contents() (intficpy.physical_entity.PhysicalEntity property)</a>
 </li>
       <li><a href="api/vocab.html#intficpy.vocab.VocabObject">VocabObject (class in intficpy.vocab)</a>
 </li>
