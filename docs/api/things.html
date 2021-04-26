@@ -49,6 +49,11 @@
 <dd><p>Bases: <a class="reference internal" href="thing_base.html#intficpy.thing_base.Thing" title="intficpy.thing_base.Thing"><code class="xref py py-class docutils literal notranslate"><span class="pre">intficpy.thing_base.Thing</span></code></a></p>
 <p>Represents one end of a staircase or ladder.
 Creators should generally use a LadderConnector or StaircaseConnector (travel.py) rather than directly creating AbstractClimbable instances.</p>
+<dl class="py attribute">
+<dt id="intficpy.things.AbstractClimbable.invItem">
+<code class="sig-name descname"><span class="pre">invItem</span></code><em class="property"> <span class="pre">=</span> <span class="pre">False</span></em><a class="headerlink" href="#intficpy.things.AbstractClimbable.invItem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -56,6 +61,11 @@ Creators should generally use a LadderConnector or StaircaseConnector (travel.py
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">intficpy.things.</span></code><code class="sig-name descname"><span class="pre">Book</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">&quot;There's</span> <span class="pre">nothing</span> <span class="pre">written</span> <span class="pre">here.</span> <span class="pre">&quot;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.things.Book" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#intficpy.things.Openable" title="intficpy.things.Openable"><code class="xref py py-class docutils literal notranslate"><span class="pre">intficpy.things.Openable</span></code></a>, <a class="reference internal" href="#intficpy.things.Readable" title="intficpy.things.Readable"><code class="xref py py-class docutils literal notranslate"><span class="pre">intficpy.things.Readable</span></code></a></p>
 <p>Readable that can be opened</p>
+<dl class="py attribute">
+<dt id="intficpy.things.Book.is_open">
+<code class="sig-name descname"><span class="pre">is_open</span></code><em class="property"> <span class="pre">=</span> <span class="pre">False</span></em><a class="headerlink" href="#intficpy.things.Book.is_open" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -124,8 +134,38 @@ Creators should generally use a LadderConnector or StaircaseConnector (travel.py
 </dd></dl>
 
 <dl class="py attribute">
+<dt id="intficpy.things.Container.contains_in">
+<code class="sig-name descname"><span class="pre">contains_in</span></code><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#intficpy.things.Container.contains_in" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.Container.contains_preposition">
+<code class="sig-name descname"><span class="pre">contains_preposition</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'in'</span></em><a class="headerlink" href="#intficpy.things.Container.contains_preposition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.Container.contains_preposition_inverse">
+<code class="sig-name descname"><span class="pre">contains_preposition_inverse</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'out'</span></em><a class="headerlink" href="#intficpy.things.Container.contains_preposition_inverse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.Container.desc_reveal">
+<code class="sig-name descname"><span class="pre">desc_reveal</span></code><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#intficpy.things.Container.desc_reveal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
 <dt id="intficpy.things.Container.holds_liquid">
 <code class="sig-name descname"><span class="pre">holds_liquid</span></code><em class="property"> <span class="pre">=</span> <span class="pre">False</span></em><a class="headerlink" href="#intficpy.things.Container.holds_liquid" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.Container.size">
+<code class="sig-name descname"><span class="pre">size</span></code><em class="property"> <span class="pre">=</span> <span class="pre">50</span></em><a class="headerlink" href="#intficpy.things.Container.size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.Container.xdesc_reveal">
+<code class="sig-name descname"><span class="pre">xdesc_reveal</span></code><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#intficpy.things.Container.xdesc_reveal" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -146,6 +186,11 @@ directly.</p>
 <dl class="py method">
 <dt id="intficpy.things.Door.makeOpen">
 <code class="sig-name descname"><span class="pre">makeOpen</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.things.Door.makeOpen" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.Door.invItem">
+<code class="sig-name descname"><span class="pre">invItem</span></code><em class="property"> <span class="pre">=</span> <span class="pre">False</span></em><a class="headerlink" href="#intficpy.things.Door.invItem" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -184,11 +229,101 @@ time left.</p>
 <code class="sig-name descname"><span class="pre">IS_LIT_DESC_KEY</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'is_lit_desc'</span></em><a class="headerlink" href="#intficpy.things.LightSource.IS_LIT_DESC_KEY" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="py attribute">
+<dt id="intficpy.things.LightSource.already_extinguished_msg">
+<code class="sig-name descname"><span class="pre">already_extinguished_msg</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#intficpy.things.LightSource.already_extinguished_msg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.LightSource.already_lit_msg">
+<code class="sig-name descname"><span class="pre">already_lit_msg</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#intficpy.things.LightSource.already_lit_msg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.LightSource.cannot_extinguish_msg">
+<code class="sig-name descname"><span class="pre">cannot_extinguish_msg</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#intficpy.things.LightSource.cannot_extinguish_msg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.LightSource.cannot_light_expired_msg">
+<code class="sig-name descname"><span class="pre">cannot_light_expired_msg</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#intficpy.things.LightSource.cannot_light_expired_msg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.LightSource.cannot_light_msg">
+<code class="sig-name descname"><span class="pre">cannot_light_msg</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#intficpy.things.LightSource.cannot_light_msg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.LightSource.consumable">
+<code class="sig-name descname"><span class="pre">consumable</span></code><em class="property"> <span class="pre">=</span> <span class="pre">False</span></em><a class="headerlink" href="#intficpy.things.LightSource.consumable" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.LightSource.expired_desc">
+<code class="sig-name descname"><span class="pre">expired_desc</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'It</span> <span class="pre">is</span> <span class="pre">burnt</span> <span class="pre">out.</span> <span class="pre">'</span></em><a class="headerlink" href="#intficpy.things.LightSource.expired_desc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.LightSource.expiry_warning">
+<code class="sig-name descname"><span class="pre">expiry_warning</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#intficpy.things.LightSource.expiry_warning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.LightSource.extinguish_msg">
+<code class="sig-name descname"><span class="pre">extinguish_msg</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#intficpy.things.LightSource.extinguish_msg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.LightSource.extinguishing_expired_msg">
+<code class="sig-name descname"><span class="pre">extinguishing_expired_msg</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#intficpy.things.LightSource.extinguishing_expired_msg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.LightSource.is_lit">
+<code class="sig-name descname"><span class="pre">is_lit</span></code><em class="property"> <span class="pre">=</span> <span class="pre">False</span></em><a class="headerlink" href="#intficpy.things.LightSource.is_lit" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt id="intficpy.things.LightSource.is_lit_desc">
 <em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">is_lit_desc</span></code><a class="headerlink" href="#intficpy.things.LightSource.is_lit_desc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Describe whether the light source is lit, not lit, or burnt out</p>
 </dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.LightSource.light_msg">
+<code class="sig-name descname"><span class="pre">light_msg</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#intficpy.things.LightSource.light_msg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.LightSource.lit_desc">
+<code class="sig-name descname"><span class="pre">lit_desc</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'It</span> <span class="pre">is</span> <span class="pre">currently</span> <span class="pre">lit.</span> <span class="pre">'</span></em><a class="headerlink" href="#intficpy.things.LightSource.lit_desc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.LightSource.not_lit_desc">
+<code class="sig-name descname"><span class="pre">not_lit_desc</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'It</span> <span class="pre">is</span> <span class="pre">currently</span> <span class="pre">not</span> <span class="pre">lit.</span> <span class="pre">'</span></em><a class="headerlink" href="#intficpy.things.LightSource.not_lit_desc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.LightSource.player_can_extinguish">
+<code class="sig-name descname"><span class="pre">player_can_extinguish</span></code><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#intficpy.things.LightSource.player_can_extinguish" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.LightSource.player_can_light">
+<code class="sig-name descname"><span class="pre">player_can_light</span></code><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#intficpy.things.LightSource.player_can_light" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.LightSource.room_lit_msg">
+<code class="sig-name descname"><span class="pre">room_lit_msg</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#intficpy.things.LightSource.room_lit_msg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.LightSource.turns_left">
+<code class="sig-name descname"><span class="pre">turns_left</span></code><em class="property"> <span class="pre">=</span> <span class="pre">20</span></em><a class="headerlink" href="#intficpy.things.LightSource.turns_left" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -231,6 +366,56 @@ trigger events when the press/push verb is used</p>
 Return True when a mixture is allowed, False otherwise</p>
 </dd></dl>
 
+<dl class="py attribute">
+<dt id="intficpy.things.Liquid.can_drink">
+<code class="sig-name descname"><span class="pre">can_drink</span></code><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#intficpy.things.Liquid.can_drink" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.Liquid.can_fill_from">
+<code class="sig-name descname"><span class="pre">can_fill_from</span></code><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#intficpy.things.Liquid.can_fill_from" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.Liquid.can_pour_out">
+<code class="sig-name descname"><span class="pre">can_pour_out</span></code><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#intficpy.things.Liquid.can_pour_out" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.Liquid.cannot_drink_msg">
+<code class="sig-name descname"><span class="pre">cannot_drink_msg</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&quot;You</span> <span class="pre">shouldn't</span> <span class="pre">drink</span> <span class="pre">that.</span> <span class="pre">&quot;</span></em><a class="headerlink" href="#intficpy.things.Liquid.cannot_drink_msg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.Liquid.cannot_fill_from_msg">
+<code class="sig-name descname"><span class="pre">cannot_fill_from_msg</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#intficpy.things.Liquid.cannot_fill_from_msg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.Liquid.cannot_pour_out_msg">
+<code class="sig-name descname"><span class="pre">cannot_pour_out_msg</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&quot;You</span> <span class="pre">shouldn't</span> <span class="pre">dump</span> <span class="pre">that</span> <span class="pre">out.</span> <span class="pre">&quot;</span></em><a class="headerlink" href="#intficpy.things.Liquid.cannot_pour_out_msg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.Liquid.infinite_well">
+<code class="sig-name descname"><span class="pre">infinite_well</span></code><em class="property"> <span class="pre">=</span> <span class="pre">False</span></em><a class="headerlink" href="#intficpy.things.Liquid.infinite_well" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.Liquid.is_numberless">
+<code class="sig-name descname"><span class="pre">is_numberless</span></code><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#intficpy.things.Liquid.is_numberless" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.Liquid.liquid_for_transfer">
+<code class="sig-name descname"><span class="pre">liquid_for_transfer</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#intficpy.things.Liquid.liquid_for_transfer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.Liquid.liquid_type">
+<code class="sig-name descname"><span class="pre">liquid_type</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#intficpy.things.Liquid.liquid_type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -253,17 +438,42 @@ Return True when a mixture is allowed, False otherwise</p>
 <code class="sig-name descname"><span class="pre">IS_LOCKED_DESC_KEY</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'is_locked_desc'</span></em><a class="headerlink" href="#intficpy.things.Lock.IS_LOCKED_DESC_KEY" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
+<dl class="py attribute">
+<dt id="intficpy.things.Lock.invItem">
+<code class="sig-name descname"><span class="pre">invItem</span></code><em class="property"> <span class="pre">=</span> <span class="pre">False</span></em><a class="headerlink" href="#intficpy.things.Lock.invItem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.Lock.is_locked">
+<code class="sig-name descname"><span class="pre">is_locked</span></code><em class="property"> <span class="pre">=</span> <span class="pre">False</span></em><a class="headerlink" href="#intficpy.things.Lock.is_locked" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt id="intficpy.things.Lock.is_locked_desc">
 <em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">is_locked_desc</span></code><a class="headerlink" href="#intficpy.things.Lock.is_locked_desc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Descripe the item’s locked/unlocked state in words</p>
 </dd></dl>
 
+<dl class="py attribute">
+<dt id="intficpy.things.Lock.is_locked_desc__false">
+<code class="sig-name descname"><span class="pre">is_locked_desc__false</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'It</span> <span class="pre">is</span> <span class="pre">currently</span> <span class="pre">unlocked.</span> <span class="pre">'</span></em><a class="headerlink" href="#intficpy.things.Lock.is_locked_desc__false" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.Lock.is_locked_desc__true">
+<code class="sig-name descname"><span class="pre">is_locked_desc__true</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'It</span> <span class="pre">is</span> <span class="pre">currently</span> <span class="pre">locked.</span> <span class="pre">'</span></em><a class="headerlink" href="#intficpy.things.Lock.is_locked_desc__true" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.Lock.key_obj">
+<code class="sig-name descname"><span class="pre">key_obj</span></code><em class="property"> <span class="pre">=</span> <span class="pre">None</span></em><a class="headerlink" href="#intficpy.things.Lock.key_obj" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
 <dt id="intficpy.things.Openable">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">intficpy.things.</span></code><code class="sig-name descname"><span class="pre">Openable</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.things.Openable" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">intficpy.things.</span></code><code class="sig-name descname"><span class="pre">Openable</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.things.Openable" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="thing_base.html#intficpy.thing_base.Thing" title="intficpy.thing_base.Thing"><code class="xref py py-class docutils literal notranslate"><span class="pre">intficpy.thing_base.Thing</span></code></a></p>
 <p>An item that can be opened.
 Inheriting from this class means that instances can be made openable</p>
@@ -292,6 +502,16 @@ Inheriting from this class means that instances can be made openable</p>
 <em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">is_open_desc</span></code><a class="headerlink" href="#intficpy.things.Openable.is_open_desc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Describes the objects open/closed state in words</p>
 </dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.Openable.is_open_desc__false">
+<code class="sig-name descname"><span class="pre">is_open_desc__false</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'It</span> <span class="pre">is</span> <span class="pre">closed.</span> <span class="pre">'</span></em><a class="headerlink" href="#intficpy.things.Openable.is_open_desc__false" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.Openable.is_open_desc__true">
+<code class="sig-name descname"><span class="pre">is_open_desc__true</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'It</span> <span class="pre">is</span> <span class="pre">open.</span> <span class="pre">'</span></em><a class="headerlink" href="#intficpy.things.Openable.is_open_desc__true" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
@@ -325,6 +545,11 @@ READ [instance as dobj] is used.</p>
 Creators should overwrite for more complex behaviour</p>
 </dd></dl>
 
+<dl class="py attribute">
+<dt id="intficpy.things.Readable.read_desc">
+<code class="sig-name descname"><span class="pre">read_desc</span></code><em class="property"> <span class="pre">=</span> <span class="pre">&quot;There's</span> <span class="pre">nothing</span> <span class="pre">written</span> <span class="pre">here.</span> <span class="pre">&quot;</span></em><a class="headerlink" href="#intficpy.things.Readable.read_desc" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -332,6 +557,41 @@ Creators should overwrite for more complex behaviour</p>
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">intficpy.things.</span></code><code class="sig-name descname"><span class="pre">Surface</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">game</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#intficpy.things.Surface" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="thing_base.html#intficpy.thing_base.Thing" title="intficpy.thing_base.Thing"><code class="xref py py-class docutils literal notranslate"><span class="pre">intficpy.thing_base.Thing</span></code></a></p>
 <p>Class for Things that can have other Things placed on them</p>
+<dl class="py attribute">
+<dt id="intficpy.things.Surface.can_contain_lying_player">
+<code class="sig-name descname"><span class="pre">can_contain_lying_player</span></code><em class="property"> <span class="pre">=</span> <span class="pre">False</span></em><a class="headerlink" href="#intficpy.things.Surface.can_contain_lying_player" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.Surface.can_contain_sitting_player">
+<code class="sig-name descname"><span class="pre">can_contain_sitting_player</span></code><em class="property"> <span class="pre">=</span> <span class="pre">False</span></em><a class="headerlink" href="#intficpy.things.Surface.can_contain_sitting_player" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.Surface.can_contain_standing_player">
+<code class="sig-name descname"><span class="pre">can_contain_standing_player</span></code><em class="property"> <span class="pre">=</span> <span class="pre">False</span></em><a class="headerlink" href="#intficpy.things.Surface.can_contain_standing_player" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.Surface.contains_on">
+<code class="sig-name descname"><span class="pre">contains_on</span></code><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#intficpy.things.Surface.contains_on" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.Surface.contains_preposition">
+<code class="sig-name descname"><span class="pre">contains_preposition</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'on'</span></em><a class="headerlink" href="#intficpy.things.Surface.contains_preposition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.Surface.contains_preposition_inverse">
+<code class="sig-name descname"><span class="pre">contains_preposition_inverse</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'off'</span></em><a class="headerlink" href="#intficpy.things.Surface.contains_preposition_inverse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.Surface.desc_reveal">
+<code class="sig-name descname"><span class="pre">desc_reveal</span></code><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#intficpy.things.Surface.desc_reveal" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -375,6 +635,31 @@ if they are given an explicit description.</p>
 being produced by default.</p>
 </dd></dl>
 
+<dl class="py attribute">
+<dt id="intficpy.things.UnderSpace.contains_preposition">
+<code class="sig-name descname"><span class="pre">contains_preposition</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'under'</span></em><a class="headerlink" href="#intficpy.things.UnderSpace.contains_preposition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.UnderSpace.contains_preposition_inverse">
+<code class="sig-name descname"><span class="pre">contains_preposition_inverse</span></code><em class="property"> <span class="pre">=</span> <span class="pre">'out'</span></em><a class="headerlink" href="#intficpy.things.UnderSpace.contains_preposition_inverse" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.UnderSpace.contains_under">
+<code class="sig-name descname"><span class="pre">contains_under</span></code><em class="property"> <span class="pre">=</span> <span class="pre">True</span></em><a class="headerlink" href="#intficpy.things.UnderSpace.contains_under" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.UnderSpace.revealed">
+<code class="sig-name descname"><span class="pre">revealed</span></code><em class="property"> <span class="pre">=</span> <span class="pre">False</span></em><a class="headerlink" href="#intficpy.things.UnderSpace.revealed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.UnderSpace.size">
+<code class="sig-name descname"><span class="pre">size</span></code><em class="property"> <span class="pre">=</span> <span class="pre">50</span></em><a class="headerlink" href="#intficpy.things.UnderSpace.size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -388,6 +673,11 @@ most of the time.</p>
 <em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">default_desc</span></code><a class="headerlink" href="#intficpy.things.Unremarkable.default_desc" title="Permalink to this definition">¶</a></dt>
 <dd><p>By default, do not describe in the room description.</p>
 </dd></dl>
+
+<dl class="py attribute">
+<dt id="intficpy.things.Unremarkable.invItem">
+<code class="sig-name descname"><span class="pre">invItem</span></code><em class="property"> <span class="pre">=</span> <span class="pre">False</span></em><a class="headerlink" href="#intficpy.things.Unremarkable.invItem" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 </dd></dl>
 
